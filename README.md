@@ -1,14 +1,66 @@
 # LibAI
 
-> Evidence-grounded open-source library discovery for JavaScript and TypeScript.
+**LibAI finds, verifies, and ranks open-source JavaScript and TypeScript libraries
+for a requirement you describe in plain English.**
 
-LibAI turns a natural-language software requirement into a short, explainable
-comparison of open-source packages. It discovers real candidates from npm and
-GitHub, collects current project signals, ranks the candidates deterministically,
-and uses a local language model only to explain the verified evidence.
+Instead of guessing from a language model's memory, LibAI searches live npm and
+GitHub data, checks maintenance and compatibility signals, and returns a concise,
+evidence-backed comparison.
 
 LibAI is designed around a simple rule: **the model may explain a recommendation,
 but it may not invent one**.
+
+![LibAI product interface](assets/libai-product.png)
+
+## See it in action
+
+Give LibAI a concrete requirement:
+
+> I need a maintained TypeScript library to generate PDFs in Node.js.
+
+LibAI converts the request into a search plan, discovers real npm packages,
+verifies their repositories, and returns a ranked comparison. Every candidate
+includes the information needed to review the decision:
+
+```text
+#1  <verified npm package>                         Score 91/100
+     Why it fits     Evidence-grounded summary
+     Adoption        Weekly npm downloads and GitHub stars
+     Maintenance     Release freshness and repository activity
+     Compatibility   Runtime, TypeScript, module, and license signals
+     Risk             Low / medium / high with supporting evidence
+     Confidence       Confidence in the available source data
+```
+
+Package names and scores come from the live discovery pipeline; they are not
+hard-coded or generated from model memory.
+
+## How it works
+
+```mermaid
+flowchart LR
+    U([Natural-language requirement]) --> W[React web app]
+    W --> A[Fastify API]
+    A --> I[Intent parser and search plan]
+
+    I --> N[(npm Registry)]
+    I --> G[(GitHub API)]
+
+    N --> E[Normalize and verify evidence]
+    G --> E
+    E --> R[Deterministic ranking]
+    R --> D[Advisor comparison]
+    D --> L[Grounded Ollama explanation]
+    L --> W
+    D -. deterministic fallback .-> W
+
+    A --> P[(PostgreSQL)]
+    A --> C[(Redis)]
+```
+
+The language model never selects packages or computes scores. External data is
+normalized into internal contracts and ranked in application code before any
+generated explanation is produced.
 
 ## Why LibAI?
 
@@ -26,29 +78,7 @@ relying on popularity alone or on a language model's memory.
 | Grounded explanations | Uses Ollama to summarize only the evidence collected by the pipeline |
 | Graceful degradation | Continues with deterministic explanations when the local model is unavailable |
 
-## Architecture
-
-```mermaid
-flowchart LR
-    U[User request] --> W[React web app]
-    W --> A[Fastify API]
-    A --> I[Intent and search plan]
-    I --> N[npm Registry]
-    I --> G[GitHub API]
-    N --> E[Normalization and evidence]
-    G --> E
-    E --> R[Deterministic ranking]
-    R --> X[Advisor]
-    X --> O[Ollama explanation]
-    O --> W
-    X -. fallback .-> W
-    A --> P[(PostgreSQL)]
-    A --> C[(Redis)]
-```
-
-The domain and ranking layers remain independent from transport and model
-providers. External data enters through dedicated adapters, is normalized into
-internal contracts, and is scored before any generated explanation is produced.
+## Repository structure
 
 | Area | Responsibility |
 | --- | --- |

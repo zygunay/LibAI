@@ -22,8 +22,8 @@ const suggestions = [
   { title: "Form validation", detail: "Type-safe and framework-agnostic" },
 ] as const;
 
-const CONVERSATIONS_KEY = "libai.conversations.v2";
-const PROFILE_NAME_KEY = "libai.profile-name.v2";
+const CONVERSATIONS_KEY = "libai.conversations.v3";
+const PROFILE_NAME_KEY = "libai.profile-name.v3";
 
 type Conversation = Readonly<{
   id: string;
