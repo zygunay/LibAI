@@ -1,0 +1,36 @@
+name: Hata
+description: Tekrar üretilebilir bir ürün veya geliştirme hatası bildir
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: expected
+    attributes:
+      label: Beklenen davranış
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Gerçek davranış
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Tekrar üretme adımları
+      placeholder: "1. ..."
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Ortam / commit
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Log / correlation ID
+      description: Secret veya kişisel veri eklemeyin.
+

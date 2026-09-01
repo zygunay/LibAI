@@ -1,0 +1,28 @@
+{
+  "name": "libai",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=11 <12"
+  },
+  "scripts": {
+    "build": "pnpm --recursive --if-present run build",
+    "check": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "clean": "pnpm --recursive --if-present run clean",
+    "dev": "node scripts/dev.mjs",
+    "format": "biome format --write .",
+    "format:check": "biome format .",
+    "lint": "biome lint .",
+    "security:check": "node scripts/security-check.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc --build --pretty false"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.10",
+    "typescript": "^5.9.2",
+    "vitest": "^4.1.11"
+  }
+}

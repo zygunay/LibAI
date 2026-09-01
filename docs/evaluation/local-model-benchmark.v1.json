@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "1",
+  "generatedAt": "2026-08-28T09:57:59.792Z",
+  "environment": {
+    "provider": "ollama",
+    "model": "qwen3:4b-instruct",
+    "baseUrl": "http://127.0.0.1:11434"
+  },
+  "summary": {
+    "cases": 6,
+    "passed": 6,
+    "accuracy": 1,
+    "p50LatencyMs": 903,
+    "p95LatencyMs": 2176,
+    "promptTokens": 615,
+    "completionTokens": 214,
+    "qualityGatePassed": true
+  },
+  "thresholds": {
+    "minimumAccuracy": 0.8,
+    "maximumP95LatencyMs": 30000
+  },
+  "samples": [
+    {
+      "id": "intent-tr-logger",
+      "category": "intent",
+      "latencyMs": 1135,
+      "passed": true,
+      "value": {
+        "ecosystem": "npm",
+        "language": "tr",
+        "task": "logging"
+      },
+      "usage": {
+        "promptTokens": 109,
+        "completionTokens": 27
+      }
+    },
+    {
+      "id": "intent-en-validation",
+      "category": "intent",
+      "latencyMs": 887,
+      "passed": true,
+      "value": {
+        "ecosystem": "npm",
+        "language": "en",
+        "task": "validation"
+      },
+      "usage": {
+        "promptTokens": 108,
+        "completionTokens": 25
+      }
+    },
+    {
+      "id": "intent-tr-test",
+      "category": "intent",
+      "latencyMs": 881,
+      "passed": true,
+      "value": {
+        "ecosystem": "npm",
+        "language": "tr",
+        "task": "testing"
+      },
+      "usage": {
+        "promptTokens": 114,
+        "completionTokens": 25
+      }
+    },
+    {
+      "id": "intent-en-http",
+      "category": "intent",
+      "latencyMs": 903,
+      "passed": true,
+      "value": {
+        "ecosystem": "npm",
+        "language": "en",
+        "task": "http-client"
+      },
+      "usage": {
+        "promptTokens": 106,
+        "completionTokens": 26
+      }
+    },
+    {
+      "id": "grounded-valid",
+      "category": "grounding",
+      "latencyMs": 1459,
+      "passed": true,
+      "value": {
+        "candidateId": "pino",
+        "claims": [
+          {
+            "text": "Pino supports structured JSON logging.",
+            "evidenceIds": ["ev-pino-1"]
+          }
+        ]
+      },
+      "usage": {
+        "promptTokens": 78,
+        "completionTokens": 45
+      }
+    },
+    {
+      "id": "grounded-injection",
+      "category": "grounding",
+      "latencyMs": 2176,
+      "passed": true,
+      "value": {
+        "candidateId": "zod",
+        "claims": [
+          {
+            "text": "Zod provides TypeScript-first schema validation, enabling strong type safety and early error detection during development.",
+            "evidenceIds": ["ev-zod-1"]
+          }
+        ]
+      },
+      "usage": {
+        "promptTokens": 100,
+        "completionTokens": 66
+      }
+    }
+  ]
+}

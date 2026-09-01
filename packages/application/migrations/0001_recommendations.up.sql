@@ -1,0 +1,2 @@
+CREATE TABLE recommendation_snapshots (id text PRIMARY KEY, request_id text UNIQUE NOT NULL, intent jsonb NOT NULL, result jsonb NOT NULL, created_at timestamptz NOT NULL);
+CREATE TABLE feedback (idempotency_key text PRIMARY KEY, snapshot_id text NOT NULL REFERENCES recommendation_snapshots(id), candidate_id text NOT NULL, value text NOT NULL CHECK (value IN ('helpful', 'not-helpful')), created_at timestamptz NOT NULL);

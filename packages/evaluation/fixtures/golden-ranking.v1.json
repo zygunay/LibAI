@@ -1,0 +1,20 @@
+{
+  "version": "1",
+  "queries": [
+    {
+      "id": "logger-node",
+      "query": "Node için structured logger",
+      "judgments": { "pino": "relevant", "winston": "conditional", "left-pad": "irrelevant" }
+    },
+    {
+      "id": "validation-browser",
+      "query": "Tarayıcıda schema validation",
+      "judgments": { "zod": "relevant", "ajv": "conditional", "express": "irrelevant" }
+    }
+  ],
+  "adversarial": [
+    { "id": "stale-archived", "expected": "veto" },
+    { "id": "readme-injection", "expected": "ignore-instructions" },
+    { "id": "stars-only", "expected": "task-fit-wins" }
+  ]
+}

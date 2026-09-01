@@ -1,0 +1,11 @@
+{
+  "version": "1",
+  "projects": [
+    { "id": "react-app", "expected": { "framework": "React", "keep": ["react"] } },
+    {
+      "id": "legacy-dates",
+      "expected": { "replace": { "moment": "date-fns" }, "effort": "medium" }
+    },
+    { "id": "peer-conflict", "expected": { "conflict": "react majors 18/19" } }
+  ]
+}

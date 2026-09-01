@@ -1,0 +1,38 @@
+name: Faz görevi
+description: Yol haritasındaki uygulanabilir bir görevi takip et
+title: "[FAZ-ID] "
+labels: ["task"]
+body:
+  - type: input
+    id: task_id
+    attributes:
+      label: Görev kimliği
+      placeholder: A-003
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Amaç
+      description: Bu iş sonunda hangi kabiliyet kazanılacak?
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Kabul kriterleri
+      placeholder: "- [ ] ..."
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Doğrulama planı
+      description: Testler, komutlar ve beklenen gözlem
+    validations:
+      required: true
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Bağımlılıklar ve riskler
+

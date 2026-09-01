@@ -1,0 +1,24 @@
+services:
+  api:
+    build: .
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-local-development-token}
+      DATABASE_URL: postgres://libai:libai@postgres:5432/libai
+      REDIS_URL: redis://redis:6379
+    ports: ["3000:3000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+  postgres:
+    image: postgres:17-alpine
+    environment: { POSTGRES_USER: libai, POSTGRES_PASSWORD: libai, POSTGRES_DB: libai }
+    volumes: ["postgres-data:/var/lib/postgresql/data"]
+    healthcheck: { test: ["CMD-SHELL", "pg_isready -U libai"], interval: 5s, timeout: 3s, retries: 10 }
+  redis:
+    image: redis:8-alpine
+    healthcheck: { test: ["CMD", "redis-cli", "ping"], interval: 5s, timeout: 3s, retries: 10 }
+volumes:
+  postgres-data:

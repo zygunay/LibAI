@@ -1,0 +1,162 @@
+[
+  {
+    "id": "GI-001",
+    "language": "tr",
+    "query": "Node ile PDF üretmek için kütüphane",
+    "taskType": "create"
+  },
+  { "id": "GI-002", "language": "en", "query": "Generate QR codes in Node", "taskType": "create" },
+  {
+    "id": "GI-003",
+    "language": "tr",
+    "query": "TypeScript ile Excel dosyası oluştur",
+    "taskType": "create"
+  },
+  {
+    "id": "GI-004",
+    "language": "en",
+    "query": "Build static documentation pages",
+    "taskType": "create"
+  },
+  {
+    "id": "GI-005",
+    "language": "tr",
+    "query": "Stripe webhook entegrasyonu",
+    "taskType": "integrate"
+  },
+  {
+    "id": "GI-006",
+    "language": "en",
+    "query": "Slack API client package",
+    "taskType": "integrate"
+  },
+  {
+    "id": "GI-007",
+    "language": "tr",
+    "query": "S3 ile dosya yükleme entegrasyonu",
+    "taskType": "integrate"
+  },
+  {
+    "id": "GI-008",
+    "language": "en",
+    "query": "OAuth provider SDK integration",
+    "taskType": "integrate"
+  },
+  {
+    "id": "GI-009",
+    "language": "tr",
+    "query": "CSV verisini JSON'a çevir",
+    "taskType": "transform"
+  },
+  {
+    "id": "GI-010",
+    "language": "en",
+    "query": "Parse Markdown into HTML",
+    "taskType": "transform"
+  },
+  {
+    "id": "GI-011",
+    "language": "tr",
+    "query": "XML parse eden TypeScript paketi",
+    "taskType": "transform"
+  },
+  { "id": "GI-012", "language": "en", "query": "Serialize form data", "taskType": "transform" },
+  {
+    "id": "GI-013",
+    "language": "tr",
+    "query": "Form verisini schema ile doğrula",
+    "taskType": "validate"
+  },
+  {
+    "id": "GI-014",
+    "language": "en",
+    "query": "Validate environment variables",
+    "taskType": "validate"
+  },
+  {
+    "id": "GI-015",
+    "language": "tr",
+    "query": "Type-safe JSON validation",
+    "taskType": "validate"
+  },
+  {
+    "id": "GI-016",
+    "language": "en",
+    "query": "Browser automation without Chromium",
+    "taskType": "automate"
+  },
+  {
+    "id": "GI-017",
+    "language": "tr",
+    "query": "Headless tarayıcı otomasyonu",
+    "taskType": "automate"
+  },
+  { "id": "GI-018", "language": "en", "query": "Schedule recurring jobs", "taskType": "automate" },
+  { "id": "GI-019", "language": "tr", "query": "Node structured loglama", "taskType": "observe" },
+  {
+    "id": "GI-020",
+    "language": "en",
+    "query": "OpenTelemetry trace package",
+    "taskType": "observe"
+  },
+  { "id": "GI-021", "language": "tr", "query": "Uygulama metric izleme", "taskType": "observe" },
+  { "id": "GI-022", "language": "en", "query": "Mock HTTP requests in tests", "taskType": "test" },
+  { "id": "GI-023", "language": "tr", "query": "React component test aracı", "taskType": "test" },
+  { "id": "GI-024", "language": "en", "query": "Browser E2E test runner", "taskType": "test" },
+  { "id": "GI-025", "language": "tr", "query": "Express rate limit paketi", "taskType": "secure" },
+  { "id": "GI-026", "language": "en", "query": "Sanitize untrusted HTML", "taskType": "secure" },
+  { "id": "GI-027", "language": "tr", "query": "JWT auth doğrulama", "taskType": "secure" },
+  { "id": "GI-028", "language": "en", "query": "Embedded database for Node", "taskType": "store" },
+  { "id": "GI-029", "language": "tr", "query": "Redis cache client", "taskType": "store" },
+  { "id": "GI-030", "language": "en", "query": "Persistent job queue", "taskType": "store" },
+  {
+    "id": "GI-031",
+    "language": "tr",
+    "query": "React erişilebilir grafik kütüphanesi",
+    "taskType": "present"
+  },
+  {
+    "id": "GI-032",
+    "language": "en",
+    "query": "Accessible date picker component",
+    "taskType": "present"
+  },
+  { "id": "GI-033", "language": "tr", "query": "Markdown editor component", "taskType": "present" },
+  { "id": "GI-034", "language": "en", "query": "Fuzzy search package", "taskType": "analyze" },
+  {
+    "id": "GI-035",
+    "language": "tr",
+    "query": "Metin benzerliği analiz paketi",
+    "taskType": "analyze"
+  },
+  {
+    "id": "GI-036",
+    "language": "en",
+    "query": "Natural language analysis library",
+    "taskType": "analyze"
+  },
+  {
+    "id": "GI-037",
+    "language": "tr",
+    "query": "Moment yerine hafif alternatif",
+    "taskType": "replace"
+  },
+  {
+    "id": "GI-038",
+    "language": "en",
+    "query": "Alternative to lodash with ESM",
+    "taskType": "replace"
+  },
+  {
+    "id": "GI-039",
+    "language": "tr",
+    "query": "Axios yerine fetch tabanlı paket",
+    "taskType": "replace"
+  },
+  {
+    "id": "GI-040",
+    "language": "en",
+    "query": "Replace deprecated request package",
+    "taskType": "replace"
+  }
+]

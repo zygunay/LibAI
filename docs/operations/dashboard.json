@@ -1,0 +1,14 @@
+{
+  "title": "LibAI Beta Operations",
+  "panels": [
+    { "metric": "libai_requests_total", "groupBy": ["route", "status"] },
+    { "metric": "libai_cache_requests_total", "groupBy": ["source", "result"] },
+    { "metric": "libai_partial_results_total", "groupBy": ["source"] },
+    { "metric": "libai_rate_budget_remaining", "groupBy": ["source"] },
+    { "metric": "libai_circuit_state", "groupBy": ["source"] }
+  ],
+  "alerts": [
+    { "name": "availability-burn", "condition": "success_ratio_5m < 0.98" },
+    { "name": "recommendation-latency", "condition": "p95_10m > 5s" }
+  ]
+}

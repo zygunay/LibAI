@@ -1,0 +1,16 @@
+{
+  "total": 1,
+  "objects": [
+    {
+      "package": {
+        "name": "demo-package",
+        "version": "2.0.0",
+        "description": "Recorded npm search fixture",
+        "keywords": ["typescript", "demo"],
+        "publisher": { "username": "fixture-owner" },
+        "date": "2026-08-20T00:00:00.000Z"
+      },
+      "score": { "final": 0.87 }
+    }
+  ]
+}

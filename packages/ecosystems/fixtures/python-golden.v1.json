@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "queries": [
+    { "query": "FastAPI request validation", "ecosystem": "pypi", "expected": ["pydantic"] },
+    { "query": "Django REST filtering", "ecosystem": "pypi", "expected": ["django-filter"] },
+    { "query": "Python HTTP client", "ecosystem": "pypi", "expected": ["requests", "httpx"] }
+  ],
+  "qualityThresholds": { "precisionAt5": 0.6, "recallAt10": 0.6 }
+}
